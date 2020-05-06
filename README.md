@@ -2,7 +2,7 @@
 
 _________________________________________________________________________________________________________
 
-"Demand for the development of dependable, functional apps has soared in recent years. In a volatile and highly competitive business environment, the systems created to support, and drive operations are crucial. Naturally, organizations will turn to their in-house development teams to deliver the programs, apps, and utilities on which the business counts to remain relevant."
+DevOps is a set of practices that combines software development (Dev) and information-technology operations (Ops) which aims to shorten the systems development life cycle and provide continuous delivery with high software quality. Demand for the development of dependable, functional apps has soared in recent years. In a volatile and highly competitive business environment, the systems created to support, and drive operations are crucial. Naturally, organizations will turn to their in-house development teams to deliver the programs, apps, and utilities on which the business counts to remain relevant."
 
 "That's a lot to ask from DevOps. Fortunately, there are tools to help deliver custom, quality applications in a timely fashion. Jenkins is one of them. Conjuring images of the stereotypical English butler, the tool acts as a "faithful servant" of sorts, easing cumbersome development tasks."
 
@@ -10,7 +10,7 @@ Let us now begin this article to take a deep dive into what is DevOps, its featu
 _______________________________________________________________________________________________________________
 ## <img src="https://miro.medium.com/max/1000/1*E8IgOSkMTpBRs0w0-Zsx2g.gif" width=200 height=100>Docker:
 
-Docker is one of the tools that used the idea of the isolated resources to create a set of tools that allows applications to be packaged with all the dependencies installed and ran wherever wanted. Docker has two concepts that is almost the same with its VM containers as the idea, an image, and a container. An image is the definition of what is going to be executed, just like an operating system image, and a container is the running instance of a given image.
+Docker is a set of platform as a service (PaaS) products that uses OS-level virtualization to deliver software in packages called containers. Docker is one of the tools that used the idea of the isolated resources to create a set of tools that allows applications to be packaged with all the dependencies installed and ran wherever wanted. Docker has two concepts that is almost the same with its VM containers as the idea, an image, and a container. An image is the definition of what is going to be executed, just like an operating system image, and a container is the running instance of a given image.
 
 **Differences between Docker and VM:**
 
@@ -52,3 +52,27 @@ Jenkins can easily distribute work across multiple machines for faster builds, t
     Free Open Source:
 
 Jenkins is an open source resource backed by heavy community support.
+____________________________________________________________________________________________________________________________________
+# Implementation and Understanding
+
+* Explanation and use case of Docker as a container based software to host programs such as any OS. 
+
+* Introduction to concept of an environment which consists of WebServer and Distros.
+
+* Launching of OS in isolation (locally) from docker.
+
+* Defining OS Image as a bootable i/o system or device. 
+
+* Also setup local webserver httpd from docker.
+
+* Concept of mounting docker to remote developer's system explained.
+
+* Explanation of PAT networking to make local WebServer available to clients globally.
+
+* Integrating both Jenkins and Docker technologies along with the VCS such as Github with update data obtained from developers system.
+
+* Explaining the necessity of two independent job creation for (1)obtaining code pushed to github by pull request by Jenkins, and (2)Deploying code to the environment.
+
+* Explanation of the method of job chaining as build trigger , where one job depends on the others success, instead of simply being queued with it.
+
+* Providing the root access to Jenkins using sudo command, after editing /etc/sudoers file, instead of the setfacl Access Control Listing command. 
