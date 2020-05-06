@@ -23,7 +23,7 @@ Docker is a set of platform as a service (PaaS) products that uses OS-level virt
 
 a. What is Jenkins and Continuous Integration?
 
-'Jenkins to the rescue!'
+**_'Jenkins to the rescue!'_**
 
 As a Continuous Integration tool, Jenkins allows seamless, ongoing development, testing, and deployment of newly created code. Continuous Integration is a process wherein developers commit changes to source code from a shared repository, and all the changes to the source code are built continuously. This can occur multiple times daily. Each commit is continuously monitored by the CI Server, increasing the efficiency of code builds and verification. This removes the testers' burdens, permitting quicker integration and fewer wasted resources.
 
@@ -31,15 +31,15 @@ b. What are the Jenkins Features?
 
     Easy Installation:
 
-Jenkins is a platform-agnostic, self-contained Java-based program, ready to run with packages for Windows, Mac OS, and Unix-like operating systems.
+    + Jenkins is a platform-agnostic, self-contained Java-based program, ready to run with packages for Windows, Mac OS, and Unix-like operating systems.
 
     Easy Configuration:
 
-Jenkins is easily set up and configured using its web interface, featuring error checks and a built-in help function.
+    + Jenkins is easily set up and configured using its web interface, featuring error checks and a built-in help function.
 
     Available Plugins:
 
-There are hundreds of plugins available in the Update Center, integrating with every tool in the CI and CD toolchain.
+    + There are hundreds of plugins available in the Update Center, integrating with every tool in the CI and CD toolchain.
 
     Extensible:
 
