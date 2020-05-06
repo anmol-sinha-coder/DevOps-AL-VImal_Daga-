@@ -64,8 +64,16 @@ ________________________________________________________________________________
 * Defining OS Image as a bootable i/o system or device. 
 
 * Also setup local webserver httpd from docker.
+```diff
+# docker pull httpd
+# docker run -d -t -i --name Redhat_WebServer httpd
+# docker cp new.html Redhat_WebServer
+```
 
 * Concept of mounting docker to remote developer's system explained.
+```diff
+# docker run -d -t -i /lwweb:/user/local/apache2/docs/ --name MyWebPage httpd
+```
 
 * Explanation of PAT networking to make local WebServer available to clients globally.
 
