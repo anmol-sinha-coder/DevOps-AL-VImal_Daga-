@@ -1,4 +1,4 @@
-# DevOps-AL_Assignment
+# DevOps-AL_Assignment <img src="https://www.capgemini.com/wp-content/uploads/2019/09/DEVOPS.gif" height=100 width=200>
 _________________________________________________________________________________________________
 "Demand for the development of dependable, functional apps has soared in recent years. In a volatile and highly competitive business environment, the systems created to support, and drive operations are crucial. Naturally, organizations will turn to their in-house development teams to deliver the programs, apps, and utilities on which the business counts to remain relevant."
 
