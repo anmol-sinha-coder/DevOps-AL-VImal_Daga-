@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 Let us now begin this article to take a deep dive into what is DevOps, its features and architecture. Main Technology/Tools Used:
 _______________________________________________________________________________________________________________
-## Docker: <img src="https://miro.medium.com/max/1000/1*E8IgOSkMTpBRs0w0-Zsx2g.gif" width=200 height=100>
+## <img src="https://miro.medium.com/max/1000/1*E8IgOSkMTpBRs0w0-Zsx2g.gif" width=200 height=100>Docker:
 
 Docker is one of the tools that used the idea of the isolated resources to create a set of tools that allows applications to be packaged with all the dependencies installed and ran wherever wanted. Docker has two concepts that is almost the same with its VM containers as the idea, an image, and a container. An image is the definition of what is going to be executed, just like an operating system image, and a container is the running instance of a given image.
 
@@ -17,7 +17,7 @@ Docker is one of the tools that used the idea of the isolated resources to creat
     They allow running multiple workloads on the same OS, which allows efficient use of resources.
     Since they mostly include application-level dependencies, they are pretty lightweight and efficient. A machine where you can run 2 VMs, you can run tens of Docker containers without any trouble, which means fewer resources = less cost = less maintenance = happy people.
 
-## Jenkins:
+## <img src="https://www.edureka.co/blog/wp-content/uploads/2016/11/Jenkins-4.gif" width=300 height=200> Jenkins:
 
 a. What is Jenkins and Continuous Integration?
 
