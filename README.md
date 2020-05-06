@@ -71,6 +71,9 @@ ________________________________________________________________________________
 ```
 
 * Explanation of PAT networking to make local WebServer available to clients globally.
+```diff
+# docker run -d -t -i /lwweb:/user/local/apache2/docs/ -p 8001:80 --name ClientSideOpen httpd
+```
 
 * Integrating both Jenkins and Docker technologies along with the VCS such as Github with update data obtained from developers system.
 
