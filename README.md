@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 Let us now begin this article to take a deep dive into what is DevOps, its features and architecture. Main Technology/Tools Used:
 _______________________________________________________________________________________________________________
-## Docker:
+## Docker: <img src="https://miro.medium.com/max/1000/1*E8IgOSkMTpBRs0w0-Zsx2g.gif" width=200 height=100>
 
 Docker is one of the tools that used the idea of the isolated resources to create a set of tools that allows applications to be packaged with all the dependencies installed and ran wherever wanted. Docker has two concepts that is almost the same with its VM containers as the idea, an image, and a container. An image is the definition of what is going to be executed, just like an operating system image, and a container is the running instance of a given image.
 
