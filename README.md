@@ -47,7 +47,7 @@ b. What are the Jenkins Features?
 ####    Free Open Source:
     Jenkins is an open source resource backed by heavy community support.
 -----------------------------------------------------------------------------------------------------------
-<img src="https://getupdraft.com/media/blog_image_overview/cicd_1.gif">
+![CI/CD_Process](https://hackernoon.com/hn-images/1*1kUhczYDfpkWXSFt0mI2dA.png)
 ____________________________________________________________________________________________________________________________________
 # Implementation and Understanding
 
