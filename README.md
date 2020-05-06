@@ -83,6 +83,22 @@ ________________________________________________________________________________
 
 * Providing the root access to Jenkins using sudo command, after editing /etc/sudoers file, instead of the setfacl Access Control Listing command. 
 
+# The Architecture:
+
+1. The DEVELOPER & Local Workspace:
+
+Each developer maintains a local workspace in personal system, and commits the changes/patches to Github through Git as and when necessary.
+
+2. Github:
+
+Once the changes are pushed to Github, the challenge is to have an automated architecture or system in order to deploy these changes to the webserver (after testing) in order for the clients to avail the benefits.
+
+3. Jenkins:
+
+This challenge is solved by Jenkins which serves as a middlemen to automate the deployment process.
+
+<img src="https://d2908q01vomqb2.cloudfront.net/7719a1c782a1ba91c031a682a0a2f8658209adbf/2019/10/20/Diagram2.png" align="center">
+
 ### Team Members
 ----------------------------------
 ```diff
