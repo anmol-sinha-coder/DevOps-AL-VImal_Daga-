@@ -82,3 +82,10 @@ ________________________________________________________________________________
 * Explanation of the method of job chaining as build trigger , where one job depends on the others success, instead of simply being queued with it.
 
 * Providing the root access to Jenkins using sudo command, after editing /etc/sudoers file, instead of the setfacl Access Control Listing command. 
+
+### Team Members
+----------------------------------
+```diff
++ Anmol Sinha        | 1805553@kiit.ac.in
+! Vedant Shrivastava | vedantshrivastava466@gmail.com
+```
