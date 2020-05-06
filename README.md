@@ -1,5 +1,7 @@
 <img src="https://miro.medium.com/max/3000/1*mqv03KrlG5LK2XU1uV4LJg.gif" height=100 width=200>
-_________________________________________________________________________________________________
+
+_________________________________________________________________________________________________________
+
 "Demand for the development of dependable, functional apps has soared in recent years. In a volatile and highly competitive business environment, the systems created to support, and drive operations are crucial. Naturally, organizations will turn to their in-house development teams to deliver the programs, apps, and utilities on which the business counts to remain relevant."
 
 "That's a lot to ask from DevOps. Fortunately, there are tools to help deliver custom, quality applications in a timely fashion. Jenkins is one of them. Conjuring images of the stereotypical English butler, the tool acts as a "faithful servant" of sorts, easing cumbersome development tasks."
