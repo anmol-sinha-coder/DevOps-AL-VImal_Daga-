@@ -104,5 +104,6 @@ This challenge is solved by Jenkins which serves as a middlemen to automate the 
 ----------------------------------
 ```diff
 + Anmol Sinha        | 1805553@kiit.ac.in
-! Vedant Shrivastava | vedantshrivastava466@gmail.com | [Go to Vedant's reository](https://github.com/Vedant-S/DevOps-Assembly_Line-Project)
+! Vedant Shrivastava | vedantshrivastava466@gmail.com
 ```
+ [Go to Vedant's reository](https://github.com/Vedant-S/DevOps-Assembly_Line-Project)
