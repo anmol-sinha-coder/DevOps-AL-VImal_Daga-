@@ -8,9 +8,10 @@ DevOps is a set of practices that combines software development (Dev) and inform
 
 Let us now begin this article to take a deep dive into what is DevOps, its features and architecture. Main Technology/Tools Used:
 __________________________________________________________________________________________________________________
-## <img src="https://i2.wp.com/tennexas.com/wp-content/uploads/2018/09/kubernetes.gif" width=200 height=100>Kubernetes:
+## <img src="https://i2.wp.com/tennexas.com/wp-content/uploads/2018/09/kubernetes.gif" width=100 height=100>Kubernetes:
 
-        Kubernetes (commonly stylized as 'k8s') is an open-source container-orchestration system for automating application deployment, scaling, and management. It was originally designed by Google, and is now maintained by the Cloud Native Computing Foundation.
+        Kubernetes (commonly stylized as 'k8s') is an open-source container-orchestration system for automating application deployment, scaling, and management.
+        It was originally designed by Google, and is now maintained by the Cloud Native Computing Foundation.
 _______________________________________________________________________________________________________________
 ## <img src="https://miro.medium.com/max/1000/1*E8IgOSkMTpBRs0w0-Zsx2g.gif" width=200 height=100>Docker:
 
