@@ -1,5 +1,5 @@
 # Linux World DevOps Training
-### Author: AVIK KUNDU [<kundu.abheek1999@gmail.com>]
+___________________________________________________________________________________________________________________
 JOB#1
 If Developer push to dev branch then Jenkins will fetch from dev and deploy on dev-docker environment.
 
