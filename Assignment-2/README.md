@@ -331,7 +331,7 @@ ________________________________________________________________________________
     Since they mostly include application-level dependencies, they are pretty lightweight and efficient. A machine where you can run 2 VMs, you can run tens of Docker containers without any trouble, which means fewer resources = less cost = less maintenance = happy people.
 
 _______________________________________________________________________________________________________________
-<img src="https://miro.medium.com/max/2560/1*AKP_kZaYCqNxC5zRth1K3A.gif" height=400 width=800>
+![new](https://messageconsulting.com/wp-content/uploads/2016/04/jenkins-technology-soup.png)
 _______________________________________________________________________________________________________________
 
 ## Docker Commands:
@@ -393,6 +393,7 @@ t - Terminal
 `docker exec -it <container_Name> /bin/bash`
 
 _______________________________________________________________________________________________________________
+![cloud-CI/CD](https://res.cloudinary.com/practicaldev/image/fetch/s--P2mKW4V3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/zca7i3yizyfqyhzuocja.gif)
 ## Docker Install Apache Webserver - Dockerfile
 
 Code to be written within Dockerfile:
