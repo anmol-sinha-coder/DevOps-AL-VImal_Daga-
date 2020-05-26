@@ -747,7 +747,263 @@ ________________________________________________________________________________
 
 <img src="https://d2908q01vomqb2.cloudfront.net/7719a1c782a1ba91c031a682a0a2f8658209adbf/2019/10/20/Diagram2.png" align="center">
 
+<img src="https://www.threatstack.com/wp-content/uploads/2017/06/docker-cloud-twitter-card.png" align="center">
 
+_________________________________________________________________________________________________________
+
+## Introduction:
+
+DevOps is a set of practices that combines software development (Dev) and information-technology operations (Ops) which aims to shorten the systems development life cycle and provide continuous delivery with high software quality. Demand for the development of dependable, functional apps has soared in recent years. In a volatile and highly competitive business environment, the systems created to support, and drive operations are crucial. Naturally, organizations will turn to their in-house development teams to deliver the programs, apps, and utilities on which the business counts to remain relevant."
+_______________________________________________________________________________________________________________
+## Docker:
+
+Docker is a set of platform as a service (PaaS) products that uses OS-level virtualization to deliver software in packages called containers. It is a category of cloud computing services that provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app. Docker is one of the tools that used the idea of the isolated resources to create a set of tools that allows applications to be packaged with all the dependencies installed and ran wherever wanted. Docker has two concepts that is almost the same with its VM containers as the idea, an image, and a container. An image is the definition of what is going to be executed, just like an operating system image, and a container is the running instance of a given image.
+
+**Differences between Docker and VM:**
+
+    Docker containers share the same system resources, they don’t have separate, dedicated hardware-level resources for them to behave like completely independent machines.
+    They don’t need to have a full-blown OS inside.
+    They allow running multiple workloads on the same OS, which allows efficient use of resources.
+    Since they mostly include application-level dependencies, they are pretty lightweight and efficient. A machine where you can run 2 VMs, you can run tens of Docker containers without any trouble, which means fewer resources = less cost = less maintenance = happy people.
+
+_______________________________________________________________________________________________________________
+![CI/CD_Process](https://hackernoon.com/hn-images/1*1kUhczYDfpkWXSFt0mI2dA.png)
+_______________________________________________________________________________________________________________
+
+## Docker Commands:
+
+    1. how to search a docker image in hub.docker.com
+
+`docker search httpd`
+
+    2. Download a docker image from hub.docker.com
+
+`docker image pull <image_name>:<image_version/tag>`
+
+    3. List out docker images from your local system
+
+`docker image ls`
+
+    4. Create/run/start a docker container from image
+
+`docker run -d --name <container_Name> <image_name>:<image_version/tag>`
+
+`d - run your container in back ground (detached)`
+
+    5. Expose your application to host server
+
+`docker run -d  -p <host_port>:<container_port> --name <container_Name> <image_name>:<Image_version/tag>`
+
+`docker run -d --name httpd_server -p 8080:80 httpd:2.2`
+
+    6. List out running containers
+
+`docker ps`
+
+    7. List out all docker container (running, stpooed, terminated, etc...)
+
+`docker ps -a`
+
+    8. run a OS based container which interactive mode (nothing but login to container after it is up and running)
+    
+```diff
+docker run -i -t --name centos_server centos:latest
+i - interactive
+t - Terminal
+```
+
+    9. Stop a container
+
+`docker stop <container_id>`
+
+    10. Start a container which is in stopped or exit state
+
+`docker start <container_id>`
+
+    11. Remove a container
+
+`docker rm <container_id>`
+
+    12. login to a docker container
+
+`docker exec -it <container_Name> /bin/bash`
+
+_______________________________________________________________________________________________________________
+## Docker Install Apache Webserver - Dockerfile
+
+Code to be written within Dockerfile:
+
+```diff
+FROM ubuntu:12.04
+
+MAINTAINER Vedant Shrivastava vedantshrivastava466@gmail.com
+
+LABEL version="1.1.0" \
+      app_name="Docker Training application" \
+	  release_date="1-January-2020"
+RUN apt-get update && apt-get install -y apache2 && apt-get clean
+
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+
+EXPOSE 80
+
+COPY index.html /var/www/html
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+```
+_______________________________________________________________________________________________________________
+## Jenkins:
+
+**_'Jenkins to the rescue!'_**
+
+As a Continuous Integration tool, Jenkins allows seamless, ongoing development, testing, and deployment of newly created code. Continuous Integration is a process wherein developers commit changes to source code from a shared repository, and all the changes to the source code are built continuously. This can occur multiple times daily. Each commit is continuously monitored by the CI Server, increasing the efficiency of code builds and verification. This removes the testers' burdens, permitting quicker integration and fewer wasted resources.
+
+
+____________________________________________________________________________________________________________________________________
+# Implementation and Understanding:
+
+* Explanation and use case of Docker as a container based software to host programs such as any OS. 
+
+* Introduction to concept of an environment which consists of WebServer and Distros.
+
+* Launching of OS in isolation (locally) from docker.
+
+* Defining OS Image as a bootable i/o system or device. 
+
+* Also setup local webserver httpd from docker.
+```diff
+# docker pull httpd
+# docker run -d -t -i --name Redhat_WebServer httpd
+# docker cp new.html Redhat_WebServer
+```
+
+* Concept of mounting docker to remote developer's system explained.
+```diff
+# docker run -d -t -i /lwweb:/user/local/apache2/docs/ --name MyWebPage httpd
+```
+
+* Explanation of PAT networking to make local WebServer available to clients globally.
+```diff
+# docker run -d -t -i /lwweb:/user/local/apache2/docs/ -p 8001:80 --name ClientSideOpen httpd
+```
+
+* Integrating both Jenkins and Docker technologies along with the VCS such as Github with update data obtained from developers system.
+
+* Explaining the necessity of two independent job creation for (1)obtaining code pushed to github by pull request by Jenkins, and (2)Deploying code to the environment.
+
+* Explanation of the method of job chaining as build trigger , where one job depends on the others success, instead of simply being queued with it.
+
+* Providing the root access to Jenkins using sudo command, after editing /etc/sudoers file, instead of the setfacl Access Control Listing command. 
+
+_______________________________________________________________________________________________________________
+# The Architecture:
+
+1. The DEVELOPER & Local Workspace:
+
+Each developer maintains a local workspace in personal system, and commits the changes/patches to Github through Git as and when necessary.
+
+2. Github:
+
+Once the changes are pushed to Github, the challenge is to have an automated architecture or system in order to deploy these changes to the webserver (after testing) in order for the clients to avail the benefits.
+
+3. Jenkins:
+
+This challenge is solved by Jenkins which serves as a middlemen to automate the deployment process.
+
+________________________________________________________________________________________________________________________________________
+# The Project:
+
+<img src="https://i1.wp.com/www.docker.com/blog/wp-content/uploads/4fa92c35-5a00-4e7a-929e-e5ae4b99701a-1.jpg?w=1600&ssl=1" align="center">
+________________________________________________________________________________________________________________________________________
+
+## YAML Code for "Docker Automation Project" through Jenkins:
+
+**Basic Project:**
+
+```diff
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: stop if we have old docker container
+    command: docker stop simple-devops-container
+    ignore_errors: yes
+
+  - name: remove stopped docker container
+    command: docker rm simple-devops-container
+    ignore_errors: yes
+
+  - name: remove current docker image
+    command: docker rmi simple-devops-image
+    ignore_errors: yes
+#    register: result
+#    failed_when:
+#      - result.rc == 0
+#      - '"docker" not in result.stdout'
+
+
+  - name: building docker image
+    command: docker build -t simple-devops-image .
+    args:
+      chdir: /opt/docker
+
+  - name: creating docker image
+    command: docker run -d --name simple-devops-container -p 8080:8080 simple-devops-image
+```
+
+_______________________________________________________________________________________________________________
+**Creating Docker Container:**
+
+```diff
+# Option-1 : Createting docker container using command module 
+---
+- hosts: all
+  become: true
+
+  tasks:
+  - name: creating docker image using docker command
+    command: docker run -d --name simple-devops-container -p 8080:8080 simple-devops-image
+	
+# option-2 : creating docker container using docker_container module 	
+#  tasks:
+#  - name: create simple-devops-container
+#    docker_container:
+#      name: simple-devops-container
+#      image: simple-devops-image
+#      state: present
+#      recreate: yes
+#      ports:
+#        - "8080:8080"
+```
+
+_______________________________________________________________________________________________________________
+**Creating Docker Image:**
+
+```diff
+# Option-1 : Createting docker image using command module 
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: building docker image
+    command: docker build -t simple-devops-image .
+    args:
+      chdir: /opt/docker
+
+# option-2 : creating docker image using docker_image module 
+
+#  tasks:
+#  - name: building docker image
+#    docker_image:
+#      build:
+#        path: /opt/docker
+#      name: simple-devops-image
+#     tag: v1
+#     source: build
+```
+
+_______________________________________________________________________________________________________________
 
 ### Author:
 ----------------------------------
