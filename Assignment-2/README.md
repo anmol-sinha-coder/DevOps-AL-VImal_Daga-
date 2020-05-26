@@ -749,7 +749,7 @@ ________________________________________________________________________________
     Since they mostly include application-level dependencies, they are pretty lightweight and efficient. A machine where you can run 2 VMs, you can run tens of Docker containers without any trouble, which means fewer resources = less cost = less maintenance = happy people.
 
 _______________________________________________________________________________________________________________
-![CI/CD_Process](https://hackernoon.com/hn-images/1*1kUhczYDfpkWXSFt0mI2dA.png)
+![CI/CD_Process](https://raw.githubusercontent.com/sumitc91/data/master/askgif-blog/8f5fb6c4-3070-4ce0-a3a9-ea0070a3fc7c_docker.jpg)
 _______________________________________________________________________________________________________________
 
 ## Docker Commands:
