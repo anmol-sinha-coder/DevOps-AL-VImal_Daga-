@@ -77,9 +77,9 @@ spec:
           claimName: graf-pvc
 
 ```  
-```
+
 Explanation: Here U need to expose the port i,e 3000 , because Grafana runs on port 3000, in k8s to expose the port we need to use services i,e NodePort, for making data permanent here we use kind PersistentVolumeClaim , and gave access ReadWriteOnce, After that we have to make deployment of grafana in k8s kind is Deployment, spec for specification, gave image name i,e(vimal13/grafana), continerport (3000), for making data permanent here we have to mount the dir i,e (var/lib/grafana) in the PersistentVolumeClaim.
-```
+
 
 `Step 2`: Configure file of prometheus.
 - Open your text-editor and type the following code > save it > prometheus.yaml.
@@ -172,24 +172,88 @@ spec:
           persistentVolumeClaim:
             claimName: prom-vol
 ```
-```
-Explanation: Here U need to expose port no. 9090, prometheus runs on port no. 9090, in k8s for exposing the port, kind is NodePort, to make the config file, Here we need to configure he kind ConfigMap, in the config map set your node ipi,e (IP:9100) port no. 9100 for node_exporter, for making data permanent here we use kind PersistentVolumeClaim, and gave access ReadWriteOnce, After that we have to make deployment in k8s, kind is Deployment , spec for specification, gave image name i,e(vimal13/prometheus), conatinerPort(9090), Now here we have to mount to things first ConfigMap location (/etc prometheus/prometheus.yaml) and second PersistentVolumeClaim location (/prometheus/data) for making our data permament.
-```
 
-`Step 3`: Configure kustomization file.
+Explanation: Here U need to expose port no. 9090, prometheus runs on port no. 9090, in k8s for exposing the port, kind is NodePort, to make the config file, Here we need to configure he kind ConfigMap, in the config map set your node ipi,e (IP:9100) port no. 9100 for node_exporter, for making data permanent here we use kind PersistentVolumeClaim, and gave access ReadWriteOnce, After that we have to make deployment in k8s, kind is Deployment , spec for specification, gave image name i,e(vimal13/prometheus), conatinerPort(9090), Now here we have to mount to things first ConfigMap location (/etc prometheus/prometheus.yaml) and second PersistentVolumeClaim location (/prometheus/data) for making our data permament.
+
+`Step 3`: Create an integrated file before running the required kustomization file for multiple resource (YAML files) execution.
 - Open your text-editor and type the following code > save it > kustomization.yaml.
 ```
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - grafana.yaml
-  -
-  - prometheus.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prom-graf-deploy
+spec:
+  selector:
+    matchLabels:
+      pod: prom-graf
+
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        pod: prom-graf
+
+
+    spec:
+      containers:
+      - name: prom-con1
+        image: Vedant-S/prometheus_ubuntu:v2
+ 
+        ports:
+        - containerPort: 9090
+
+
+        volumeMounts:
+          - name: prom-vol
+            mountPath: /data/
+
+      - name: graf-con1
+        image: grafana/grafana
+  
+        ports:
+        - containerPort: 3000
+
+        volumeMounts:
+          - name: graf-vol
+            mountPath: /var/lib/grafana/
+
+
+
+      volumes:
+      - name: prom-vol
+        persistentVolumeClaim:
+          claimName: prometheus-pvc
+    
+      - name: graf-vol
+        persistentVolumeClaim:
+          claimName: grafana-pvc
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-provider
+spec:
+  type: NodePort
+  selector:
+    pod: prom-graf
+
+
+  ports:
+  - port: 9090
+    protocol: TCP
+    name: prom-port
+
+  - port: 3000
+    protocol: TCP
+    name: graf-port
 
 ```
-```
+The
 Explanation: specifies the common resources and common customizations to those resources, Here where need to use kink Kustomization in k8s, gave resources and it executes the resources, Here resources are yaml files .
-```
+
 `To Run the setup type > kubectl apply -k .`
 
 `Step 4`: Output of prometheus:
