@@ -36,6 +36,69 @@ ________________________________________________________________________________
 - Nodeport Service, through which the pod will be exposed.
 - Persistent Volume which will be attached to the pod.
 - Deployment Code: It contains the definition of pod which includes its name, the image which will be used to launch the container in the pod, the mount path of the Persistent volume created in the previous step and the services using which this pod will be exposed.
+_________________________________________________________________________________________________________________________________________
+  
+     apiVersion: v1
+     kind: Service
+     metadata:
+       name: webserver-service
+       labels:
+         app: httpd
+     spec:
+       ports:
+         - nodePort: 30002
+           port: 80
+           targetPort: 80
+       selector:
+         app: httpd
+         tier: web
+       type: NodePort
+     ---
+     apiVersion: v1
+     kind: PersistentVolumeClaim
+     metadata:
+       name: httpdweb2-pv-claim
+       labels:
+         app: httpd
+     spec:
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           storage: 1Gi
+     ---
+     apiVersion: apps/v1
+     kind: Deployment
+     metadata:
+       name: httpd-g-web
+       labels:
+         app: httpd
+     spec:
+       selector:
+         matchLabels:
+           app: httpd
+           tier: web
+       strategy:
+         type: Recreate
+       template:
+         metadata:
+           labels:
+             app: httpd
+             tier: web
+         spec:
+           containers:
+           - image: vimal13/apache-webserver-php
+             name: httpd-g-web
+             ports:
+             - containerPort: 80
+               name: httpd-g-web
+             volumeMounts:
+             - name: httpd-web-persistent-storage
+               mountPath: /var/www/html
+           volumes:
+           - name: httpd-web-persistent-storage
+             persistentVolumeClaim:
+               claimName: httpdweb2-pv-claim
 
 `This is it at the developer site.`
 ____________________________________________________________________________________________________________________
@@ -81,7 +144,7 @@ Create a file named `config.groovy` and start writing following job definitions 
 `For Job 2`: As provided.
 `For Job 3`: As provided.
 
-`Now push this .grrovy file in the github repository.
+`Now push this config.groovy file in the github repository.
 
 - Create the seed job. It is simply just another job in jenkins, no difference. The job definition is:
 - Save and build the Seed Job and Thats it. All the other jobs Job 1, Job 2 and Job 3 will be created automatically and will build automatically in the order.
