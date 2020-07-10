@@ -23,13 +23,54 @@ ________________________________________________________________________________
 - Also create a index.html page that you want deploy on the webserver.
 - Create a New Repository on GitHub and don't initialise it with a Readme file.
 - Run the commands listed on the page in git bash after you have added and committed to local git.
-- Create post-commit where you will specify what has to to done after you commit the code on local git. ex. I have used git push which will automatically push the code to GitHub as soon it is commited and then a trigger which will run the first job of jenkins.
+- Create post-commit where you will specify what has to to done after you commit the code on local git. ex. I have used git push which will automatically push the code to GitHub as soon it is commited and then a trigger which will run the first job of jenkins.]
+
+      FROM centos
+      RUN yum install sudo -y
+      # Macking Package-repository up to date
+      RUN yum update -qy
+      RUN yum install  git -y
+      # Installing a SSH Server 
+      RUN yum install -y openssh-server
+      RUN mkdir -p /var/run/sshd
+      # Installing JDK 
+      RUN yum install java-11-openjdk-devel -y
+      # Creating and adding Jenkins user
+      RUN useradd jenkins 
+      RUN echo "jenkins:jenkins" | chpasswd
+      RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g'  -i /etc/pam.d/sshd
+      RUN mkdir /home/jenkins/.m2
+      RUN echo "jenkins ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/jenkins
+      RUN chmod 0440 /etc/sudoers.d/jenkins
+      RUN ssh-keygen -A
+      ENV NOTVISIBLE "in users profile"
+      RUN echo "export VISIBLE=now" >> /etc/profile
+      RUN rm /run/nologin
+      RUN chown -R jenkins:jenkins /home/jenkins/.m2/
+      RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+      RUN chmod +x kubectl
+      RUN cp kubectl /usr/bin
+      WORKDIR /home/jenkins
+      COPY ca.crt /home/jenkins
+      COPY client.crt /home/jenkins
+      COPY client.key /home/jenkins
+      COPY config.yml /root/.kube/config
+      RUN sudo chown -R jenkins /root/.kube 
+      EXPOSE 22  
+      CMD ["/usr/sbin/sshd", "-D"]
 
 `Step 2`: Start jenkins and Create Job 1:
 This job will automatically run as soon as the developer commit code on git.
 - Specify the GitHub repository from where the code is to be downloaded.
 - Create trigger , this the same trigger whose URL is specified in the post-commit file.
 - Then write the commands for building the Dockerfile that is downloaded from GitHub and then push the docker image made to Docker Hub.
+
+      FROM centos
+      WORKDIR /root/jenk_task4
+      COPY . /var/www/html
+      RUN yum install httpd -y
+      CMD [ "/usr/sbin/httpd","-D","FOREGROUND" ]
+      Expose 80
 
 `Step 3`: Create Dockerfile for Kubernetes slave:
 - This dockerfile will create a docker image that will be used by jenkins to launch a slave node.
@@ -57,5 +98,5 @@ ________________________________________________________________________________
 ### Author:
 ----------------------------------
 ```diff
-! 1805553@kiit.ac.in
+! 1805553@kiit.ac.in | Anmol Sinha
 ```
