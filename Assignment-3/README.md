@@ -16,3 +16,25 @@ ________________________________________________________________________________
       RUN ssh-keygen -A
       EXPOSE 22
       CMD ["/usr/sbin/sshd","-D"] && /bin/bash
+      
+### The config.YAML file can be seen as :-
+
+            apiVersion: v1
+            kind: Config
+
+            clusters:
+            - cluster:
+                server: https://192.168.42.236:4243
+                certificate-authority: /root/ca.crt
+              name: kubecluster
+
+            contexts:
+            - context:
+                cluster: kubecluster
+                user: Vedant
+
+            users:
+            - name: Vedant
+              user:
+                client-key: /root/client.key
+                client-certificate: /root/client.crt
