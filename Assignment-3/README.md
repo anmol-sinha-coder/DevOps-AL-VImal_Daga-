@@ -1,5 +1,5 @@
 _________________________________________________________________________________________________________
-
+## For connecting to Kubernetes(k8s) via 
       FROM centos 
       RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
@@ -16,6 +16,14 @@ ________________________________________________________________________________
       RUN ssh-keygen -A
       EXPOSE 22
       CMD ["/usr/sbin/sshd","-D"] && /bin/bash
+_____________________________________________________________________________________________________________________________________________________________________
+### The DOCKERFILE to expose HTTPD is:-
+
+            FROM centos
+            RUN yum install httpd -y
+            RUN echo /usr/sbin/httpd >> /etc/bashrc
+            COPY / /var/www/html/
+            EXPOSE 80
       
 ### The config.YAML file can be seen as :-
 
