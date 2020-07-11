@@ -10,7 +10,7 @@ Integrate Prometheus and Grafana and perform in following way:
 - `Minikube and kubectl configured if not follow this link:` https://kubernetes.io/docs/setup/learning-environment/minikube/
 - One Node for matrices.
 ## GENERAL CONCEPTS:-
-!(Differences)[https://cloud.vmware.com/community/wp-content/uploads/9/sites/9/2018/03/Metrics-vs-Logs-fig-1.png]
+![Differences](https://cloud.vmware.com/community/wp-content/uploads/9/sites/9/2018/03/Metrics-vs-Logs-fig-1.png)
 ____________________________________________________________________________________________________________________
 ### STEPS:
 
