@@ -15,6 +15,20 @@ ________________________________________________________________________________
 5.1 If launching first time then create a deployment of the pod using the image created in the previous job. Else if deployment already exists then do rollout of the existing pod making zero downtime for the user.<br><br>
 5.2  If Application created first time, then Expose the application. Else don’t expose it.
 ____________________________________________________________________________________________________________________
+## Essential Requirements:-
+`1` SSH and JNLP protocol for use in Redhat and Windows connection.
+`2` Concept of slave/agent program explained and requirement of storage area/path information. 
+`3` Configuring slave nodes Redhat and Windows, using Redhat IP-Ssh key, and Windows JNLP(JAVA Network Launching Protocol).
+term Dynamic Distributed Job Cluster.
+`4` Knowledge of Docker Services server and Docker client.
+`5` Idea of fd:// in docker daemon, which has no tcp support and current Docker config which has no socket/network support.
+`6` Necessity to alter 'docker.service' file to add tcp port and IP address.
+`7` Idea about reload of daemon in linux and Docker.
+`8` Changing of DOCKER_HOST variable.
+`9` Setup docker within Jenkins with appropriate plugins.
+`10` Setup/configuration of Cloud services for jenkins to link to remote Docker server as dynamic slave node.
+`11` Setup ssh-key gen and pulled appropriate image from docker hub.
+____________________________________________________________________________________________________________________
 ### STEPS:
 
 `Step 1`:
