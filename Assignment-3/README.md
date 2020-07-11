@@ -33,17 +33,17 @@ ________________________________________________________________________________
 
             clusters:
             - cluster:
-                server: https://192.168.42.236:4243
+                server: https://<YOUR_IP>:4243
                 certificate-authority: /root/ca.crt
               name: kubecluster
 
             contexts:
             - context:
                 cluster: kubecluster
-                user: Vedant
+                user: Anmol
 
             users:
-            - name: Vedant
+            - name: Anmol
               user:
                 client-key: /root/client.key
                 client-certificate: /root/client.crt
