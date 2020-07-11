@@ -1,4 +1,4 @@
-# <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZfasd4cKMF_H222ed1Pz5S6o-QJ5M7Nj72w&usqp=CAU">Jenkins with Prometheus Grafana Integration <img src="https://www.influxdata.com/wp-content/uploads/Prometheus-1.png">
+# <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZfasd4cKMF_H222ed1Pz5S6o-QJ5M7Nj72w&usqp=CAU" width=100 height=100>Jenkins with Prometheus Grafana Integration <img src="https://www.influxdata.com/wp-content/uploads/Prometheus-1.png" width=100 height=100>
 ____________________________________________________________________________________________________________________
 ### PROBLEM STATEMENT:
 Integrate Prometheus and Grafana and perform in following way:
