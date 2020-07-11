@@ -1,5 +1,5 @@
 
-#  Jenkins-Kubernetes Dynamic Slave-Master Cluster :img src="https://i.ytimg.com/vi/1k34Yi0rpu8/maxresdefault.jpg"></img>
+#  Jenkins-Kubernetes Dynamic Slave-Master Cluster<img src="https://i.ytimg.com/vi/1k34Yi0rpu8/maxresdefault.jpg"></img>
 ____________________________________________________________________________________________________________________
 ### PROBLEM STATEMENT:
 1. Create container image that’s has Linux and other basic configuration required to run Slave for Jenkins. (example here we require kubectl to be configured)
