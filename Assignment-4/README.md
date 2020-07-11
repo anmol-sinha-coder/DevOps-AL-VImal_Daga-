@@ -108,6 +108,8 @@ In the Docker Host URI we have specified the `IP` of docker server but by defaul
 - On building this job a slave node will be launched.
 
 `Step 7`: Build Pipeline View.
+### Reference
+![Study_material_YouTube](https://www.youtube.com/watch?v=1k34Yi0rpu8)
 ____________________________________________________________________________________________________________________
 ### Author:
 ----------------------------------
