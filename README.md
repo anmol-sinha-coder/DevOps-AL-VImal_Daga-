@@ -177,7 +177,7 @@ This challenge is solved by Jenkins which serves as a middlemen to automate the 
 ### Team Members
 ----------------------------------
 ```diff
-+ Anmol Sinha        | 1805553@kiit.ac.in
-! Vedant Shrivastava | vedantshrivastava466@gmail.com
++ Anmol Sinha | 1805553@kiit.ac.in
+! Jenkins | Docker | Kubernetes | TensorFlow | PyTorch | Prometheus | Grafana | ELK Stack | Ansible                 
 ```
  [Go to Vedant's repository](https://github.com/Vedant-S/DevOps-Assembly_Line-Project)
