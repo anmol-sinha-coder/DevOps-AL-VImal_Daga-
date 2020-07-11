@@ -1,3 +1,4 @@
+# Kubernetes Replication Controller Deployment in Jenkins <br/><img src="https://miro.medium.com/max/662/1*WcsxEzPbIGvFBQY6j2in5Q.png"></img>
 _________________________________________________________________________________________________________
 ## For connecting to Kubernetes(k8s) and Jenkins via the DOCKERFILE :-
       FROM centos 
