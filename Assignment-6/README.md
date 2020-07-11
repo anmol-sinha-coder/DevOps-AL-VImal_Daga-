@@ -1,10 +1,10 @@
 
 # CI/CD Automatic Deployment Pipeline with Groovy using Jenkins 
- Further, deploy applications on Kubernetes according to their respective language interpreter with auto testing
+ Further, deploy applications on Kubernetes according to their respective language interpreter with auto testing.
  <img src="https://miro.medium.com/max/2772/1*GrauvM0qGnsxJTP5WFu7Fg.png" width=500 height=100>
 ____________________________________________________________________________________________________________________
 ### PROBLEM STATEMENT:
-In this Project, we will be using Tools such as Github, Jenkins, Kubernetes, Docker Language used for creating and managing the Pipeline will be Groovy. We will use jenkins inbuilt plugin Job DSL for configuring jobs.
+In this Project, we will be using Tools such as Github, Jenkins, Kubernetes, Docker Language used for creating and managing the Pipeline will be Groovy. We will use jenkins inbuilt plugin Job DSL for configuring jobs. Groovy requires DSL language for its work9ng, very much like Ansible.
 
 The Job DSL plugin attempts to solve this problem by allowing jobs to be defined in a programmatic form in a human readable file. Writing such a file is feasible without being a Jenkins expert as the configuration from the web UI translates intuitively into code.
 
