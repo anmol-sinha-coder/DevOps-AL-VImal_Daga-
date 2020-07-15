@@ -1,4 +1,4 @@
-<img src="https://miro.medium.com/max/3000/1*mqv03KrlG5LK2XU1uV4LJg.gif" height=100 width=200> <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/128118345/original/c776fd8433fd0870bd5534b04ce547a436ab68a8/do-something-i-am-at-aws-kubernetes-docker-terraform-ci-cd-linux.png" height=135 width=255>
+<img src="https://miro.medium.com/max/3000/1*mqv03KrlG5LK2XU1uV4LJg.gif" height=100 width=200> <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/128118345/original/c776fd8433fd0870bd5534b04ce547a436ab68a8/do-something-i-am-at-aws-kubernetes-docker-terraform-ci-cd-linux.png" height=180 width=340>
 
 _________________________________________________________________________________________________________
 
